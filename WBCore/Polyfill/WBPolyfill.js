@@ -53,6 +53,11 @@
 
   nslog('Create bluetooth');
   let bluetooth = {};
+  bluetooth.getAvailability = function () {
+    return new Promise((resolve, reject) => {
+      resolve(true);
+    });
+  };
   bluetooth.requestDevice = function (requestDeviceOptions) {
     if (!requestDeviceOptions) {
       return Promise.reject(new TypeError('requestDeviceOptions not provided'));
